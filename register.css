@@ -1,0 +1,253 @@
+
+/*General styling*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Body  Styling*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 0px;
+  background-color:#31b1c2 ;
+ height:100vh;
+}
+
+/*Container Styling*/
+.container{
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: rgb(206, 202, 195);
+  box-shadow:1px 12px 8px  rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: 50%;
+  padding: 20px;
+  text-align: start;
+}
+
+/* Header Styling */
+header{
+  display: flex;
+  justify-content: c;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Form Input */
+.form-input{
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Submit Button */
+.btn{
+  background-color: #358a37;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 6px 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Button Hover */
+.btn:hover{
+  background-color: rgb(3, 161, 3);
+}
+
+/* Filter-Input */
+.form-input-filter{
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+/* Ul styling */
+ ul{
+  list-style-type: none;
+  padding: 0px;
+  margin-bottom: 20px;
+ }
+
+/*List items  */
+li{
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Remove Button */
+.remove-item{
+  color: red;
+  border: none;
+  cursor: pointer;
+}
+
+/* remove button Hover */
+.remove-item:hover{
+  color: hwb(0 2% 29% / 0.925);
+}
+
+/* Clear Button */
+.clear-btn{
+  background-color: rgb(235, 68, 68);
+  color: #ccc;
+ padding: 8px 16px;
+ border-radius: 6px;
+ border: none;
+ cursor: pointer;
+ outline: none;
+}
+
+/* Clear-btn Hover */
+.clear-btn:hover{
+  background-color: #f50707ea;
+}
+
+/* General Reset and Body Styling */
+
+/*  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #31b1c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container Styling *
+.container {
+  background-color: #404e52;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  text-align:start;
+}
+
+/* Header Styling *
+header {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Styling *
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-input, .form-input-filter, select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.form-control {
+  margin-top: 10px;
+}
+
+/* Button Styling *
+.btn {
+  padding: 12px 20px;
+  background-color: #358a37;
+  color: white;
+  border: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.clear-btn {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.clear-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* List Styling *
+ul.items {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+ul.items li {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #ff3b30;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: #d32f2f;
+}
+
+/* Filter Input Styling *
+.filter {
+  margin-top: 20px;
+}
+
+.form-input-filter {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
