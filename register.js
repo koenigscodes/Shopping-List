@@ -4,6 +4,8 @@ const itemInput = document.getElementById('item-input');
 const itemList = document.getElementById('item-list');
 const clearBtn = document.getElementById('clear');
 const itemFilter = document.getElementById('filter');
+const formBtn = itemForm.querySelector('button');
+let isEditMode = false;
 
 // Add Item Function
 function OnAddItemSubmit(e){
@@ -15,6 +17,16 @@ function OnAddItemSubmit(e){
   if (newItem === ""){
     alert('Please a valid  item');
     return;
+  }
+
+  //check for edit mode 
+  if (isEditMode) {
+    const itemToEdit = itemList.querySelector('.edit-mode');
+
+    removeItemFromStorage(itemToEdit.textContent);
+    itemToEdit.classList.remove('.edit-mode');
+    itemToEdit.remove();
+    isEditMode = false;
   }
 
   addItemToDom(newItem);
@@ -57,18 +69,24 @@ function addItemToDom(item) {
 }
 //Add Item to storage 
 function addItemToStorage(item) {
+  const itemsFromStorage = getItemsFromStorage();
+  
+                                                                              
+  // Add new item to array
+  itemsFromStorage.push(item);
+
+  //convert to JSON string and set to local storage
+  localStorage.setItem('items', JSON.stringify(itemsFromStorage));
+}
+
+function getItemsFromStorage() {
   let itemsFromStorage;
   if (localStorage.getItem('items') === null) {
     itemsFromStorage = [];
   } else {
     itemsFromStorage =JSON.parse(localStorage.getItem('items'));
   }
-   
-  // Add new item to array
-  itemsFromStorage.push(item);
-
-  //convert to JSON string and set to local storage
-  localStorage.setItem('items', JSON.stringify(itemsFromStorage));
+  return itemsFromStorage;
 }
 
 // Create Button Function
@@ -90,7 +108,22 @@ function createIcon(classes){
 function OnClickItem(e) {
   if (e.target.parentElement.classList.contains('remove-item')) {
     removeItem(e.target.parentElement.parentElement); 
+  } else{
+    setItemToEdit(e.target);
   }
+}
+
+function setItemToEdit(item) {
+  isEditMode = true;
+
+  itemList
+  .querySelectorAll('li')
+  .forEach((i)=> i.classList.remove('edit-mode'));
+
+  item.classList.add('edit-mode');
+  formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Update item';
+  formBtn.style.backgroundColor = 'blue';
+  itemInput.value = item.textContent;
 }
 
 function removeItem(item){
@@ -106,7 +139,7 @@ function removeItem(item){
   }
 }
 
-function RemoveItemFromStorage(item){
+function removeItemFromStorage(item) {
   let itemsFromStorage = getItemsFromStorage();
 
   // filter out item to be removed
