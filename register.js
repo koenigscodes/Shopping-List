@@ -139,7 +139,11 @@ function removeItem(item){
   }
 }
 
+<<<<<<< HEAD
 function removeItemFromStorage(item) {
+=======
+function removeItemFromStorage(item){
+>>>>>>> b90ee82f4b2151c429e4d36d8c4da4f43393ba15
   let itemsFromStorage = getItemsFromStorage();
 
   // filter out item to be removed
