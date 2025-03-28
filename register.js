@@ -106,7 +106,7 @@ function removeItem(item){
   }
 }
 
-function RemoveItemFromStorage(item){
+function removeItemFromStorage(item){
   let itemsFromStorage = getItemsFromStorage();
 
   // filter out item to be removed
